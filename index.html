@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LC Conecta | Conserto de celular, notebook e computador em Guarapari</title>
+  <meta name="description" content="Assistência técnica na Praia do Morro, em Guarapari - ES: conserto de celular, notebook e computador, Wi-Fi e rede. Mostre o defeito no site e mande a pré-ordem de serviço pelo WhatsApp.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0E2A27">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="LC Conecta | Assistência técnica em Guarapari">
+  <meta property="og:description" content="Conserto de celular, notebook e computador com orçamento pelo WhatsApp antes do serviço.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/InstrumentSans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="site.config.js" defer></script>
+  <script src="ordem.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="logo-marca" viewBox="0 0 32 32">
+      <rect width="32" height="32" rx="7" fill="#0E2A27"/>
+      <path d="M9 7.5V21h5.5" fill="none" stroke="#D4843A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="16.4" cy="21" r="2.6" fill="#0E2A27" stroke="#D4843A" stroke-width="2"/>
+      <path d="M26 11.6a6.2 6.2 0 1 0 0 8.8" fill="none" stroke="#E8EFEA" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4.4 19.6l1.2-3.7a8.2 8.2 0 1 1 2.8 2.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.3 8.4c.3-.5.7-.6 1.1-.3l.9 1.6c.1.3 0 .6-.2.8l-.5.5c.5 1 1.3 1.8 2.3 2.3l.5-.5c.2-.2.5-.3.8-.2l1.6.9c.3.2.4.6 0 1-.6.6-1.5.9-2.4.6-2-.8-3.6-2.4-4.4-4.4-.3-.8 0-1.7.3-2.3z" fill="currentColor"/></symbol>
+    <symbol id="i-celular" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></g></symbol>
+    <symbol id="i-notebook" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.2"/><path d="M2.5 19.5l2-4.5h15l2 4.5z"/></g></symbol>
+    <symbol id="i-computador" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="13.5" y="3" width="7.5" height="18" rx="1.2"/><rect x="2.5" y="5" width="8.5" height="7.5" rx="1"/><path d="M6.8 12.5v4M4.5 16.5h4.6M17.2 7h.01"/></g></symbol>
+    <symbol id="i-roteador" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 13L5.5 5.5M17 13l1.5-7.5M7 16.5h.01M10 16.5h.01"/></g></symbol>
+    <symbol id="i-impressora" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 9V3.5h10V9"/><rect x="3.5" y="9" width="17" height="8" rx="1.5"/><rect x="7" y="14" width="10" height="6.5"/></g></symbol>
+    <symbol id="i-mouse" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M12 7v3"/></g></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.5-3 8-7 9.5-4-1.5-7-5-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+    <symbol id="i-orcamento" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.8h6V4M8.5 12.5l2.5 2.5 4.5-4.5"/></g></symbol>
+    <symbol id="i-caixa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 7.8L12 3.5l8.5 4.3v8.4L12 20.5l-8.5-4.3z"/><path d="M3.5 7.8L12 12l8.5-4.2M12 12v8.5"/></g></symbol>
+    <symbol id="i-mapa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s-6.5-5.7-6.5-10.8a6.5 6.5 0 1 1 13 0C18.5 15.3 12 21 12 21z"/><circle cx="12" cy="10.2" r="2.3"/></g></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 9a13.5 13.5 0 0 1 19 0M5.6 12.3a9 9 0 0 1 12.8 0M8.7 15.5a4.6 4.6 0 0 1 6.6 0"/><path d="M12 19h.01" stroke-width="2.8"/></g></symbol>
+    <symbol id="i-cabo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="8" width="10" height="9" rx="1"/><path d="M9.5 8V5h5v3M12 17v4.5M10 11v2M12 11v2M14 11v2"/></g></symbol>
+    <symbol id="i-raio" viewBox="0 0 24 24"><path d="M13 2.5L6 13h5l-1 8.5L18 11h-5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-fone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 14.5V12a8 8 0 0 1 16 0v2.5"/><rect x="3" y="14" width="4.5" height="6.5" rx="1.5"/><rect x="16.5" y="14" width="4.5" height="6.5" rx="1.5"/></g></symbol>
+    <symbol id="i-pelicula" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M9.8 9.2l3.6-3.6M9.8 13.4l5.2-5.2"/></g></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="7" width="17" height="10" rx="1.5"/><rect x="7" y="10" width="4" height="4"/><path d="M7 17v3M10.5 17v3M14 17v3M17.5 17v3"/></g></symbol>
+    <symbol id="i-tomada" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 10.5v2.5M14.5 10.5v2.5"/></g></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-recomecar" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4v4.5H9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-alerta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5L21.5 20h-19z"/><path d="M12 10v4.5M12 17.3h.01"/></g></symbol>
+  </svg>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo" id="topo">
+    <div class="topo-faixa">
+      <a class="marca" href="#topo" aria-label="LC Conecta, voltar ao início">
+        <svg class="marca-simbolo" aria-hidden="true"><use href="#logo-marca"/></svg>
+        <span class="marca-nome"><span class="marca-lc">LC</span> Conecta</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg>
+        <span>Menu</span>
+      </button>
+      <nav class="menu" id="menu" aria-label="Seções da página">
+        <a href="#consertos">Consertos</a>
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#redes">Wi-Fi e rede</a>
+        <a href="#balcao">Balcão</a>
+        <a href="#onde-fica">Onde fica</a>
+      </nav>
+      <a class="botao botao-escuro topo-whats" href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." target="_blank" rel="noopener">
+        <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="abertura" aria-labelledby="titulo-abertura">
+      <div class="abertura-grade">
+        <div class="abertura-texto">
+          <p class="sobretitulo">Assistência técnica na Praia do Morro, Guarapari - ES</p>
+          <h1 id="titulo-abertura">Conserto de celular, notebook e computador em Guarapari</h1>
+          <p class="abertura-lead">Você mostra o defeito, a bancada encontra a causa e o orçamento chega pelo WhatsApp. O conserto só começa depois que você aprova. Também cuidamos do Wi-Fi e da rede da sua casa ou do seu comércio.</p>
+          <div class="acoes">
+            <a class="botao botao-cobre" href="#diagnostico">
+              <span>Mostrar o defeito</span>
+              <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg>
+            </a>
+            <a class="botao botao-linha" href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." target="_blank" rel="noopener">
+              <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              <span>(27) 99916-9771</span>
+            </a>
+          </div>
+          <p class="status" data-horario>
+            <span class="led" aria-hidden="true"></span>
+            <span class="status-texto">Seg. a sex. das 8h às 18h, sáb. das 8h às 12h</span>
+          </p>
+        </div>
+        <figure class="abertura-foto">
+          <picture>
+            <source media="(max-width: 600px)" srcset="assets/img/bancada-480.webp">
+            <img src="assets/img/bancada.webp" width="800" height="1000" alt="Técnico solda um componente na placa de um notebook, sobre a bancada de trabalho">
+          </picture>
+          <figcaption class="serigrafia">PLACA DE NOTEBOOK EM REPARO / FOTO ILUSTRATIVA</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="garantias" aria-label="Condições de atendimento">
+      <ul class="garantias-lista">
+        <li>
+          <svg class="icone" aria-hidden="true"><use href="#i-orcamento"/></svg>
+          <p><strong>Orçamento antes do conserto</strong> Peça, serviço e prazo por escrito, para você aprovar.</p>
+        </li>
+        <li>
+          <svg class="icone" aria-hidden="true"><use href="#i-escudo"/></svg>
+          <p><strong>Garantia de 90 dias</strong> Anotada na ordem de serviço, que fica com você.</p>
+        </li>
+        <li>
+          <svg class="icone" aria-hidden="true"><use href="#i-caixa"/></svg>
+          <p><strong>Busca e entrega</strong> Na Praia do Morro e nos bairros vizinhos, com hora marcada.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="secao consertos" id="consertos" aria-labelledby="titulo-consertos">
+      <div class="secao-cabeca">
+        <p class="sobretitulo sobretitulo-cobre">Consertos</p>
+        <h2 id="titulo-consertos">O que passa pela bancada</h2>
+        <p>Celular, notebook e computador de mesa, de qualquer marca. Se o defeito não estiver na lista, mande uma mensagem: a avaliação é a mesma.</p>
+      </div>
+      <div class="consertos-grade">
+        <article class="cartao">
+          <img src="assets/img/celular.webp" width="720" height="540" loading="lazy" alt="Mãos abrindo um celular sobre a bancada, com pulseira antiestática no pulso">
+          <div class="cartao-corpo">
+            <p class="etiqueta"><svg class="icone" aria-hidden="true"><use href="#i-celular"/></svg>Celular</p>
+            <h3>Tela, bateria e carga</h3>
+            <ul class="lista-trilha">
+              <li>Troca de tela e do vidro da câmera</li>
+              <li>Bateria e conector de carga</li>
+              <li>Alto-falante e microfone</li>
+              <li>Aparelho que molhou</li>
+              <li>Sistema travando, com cópia dos dados</li>
+            </ul>
+            <a class="link-seta" href="#diagnostico" data-aparelho="celular">Mostrar o defeito do celular<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="cartao">
+          <img src="assets/img/notebook.webp" width="720" height="540" loading="lazy" alt="Notebook aberto por baixo, com a placa, a ventoinha e o dissipador de cobre à mostra">
+          <div class="cartao-corpo">
+            <p class="etiqueta"><svg class="icone" aria-hidden="true"><use href="#i-notebook"/></svg>Notebook</p>
+            <h3>Tela, teclado e aquecimento</h3>
+            <ul class="lista-trilha">
+              <li>Tela, teclado e dobradiça</li>
+              <li>Bateria e entrada do carregador</li>
+              <li>Limpeza interna e pasta térmica</li>
+              <li>Troca de HD por SSD e mais memória</li>
+              <li>Formatação com cópia dos arquivos</li>
+            </ul>
+            <a class="link-seta" href="#diagnostico" data-aparelho="notebook">Mostrar o defeito do notebook<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="cartao">
+          <img src="assets/img/computador.webp" width="720" height="540" loading="lazy" alt="Mãos encaixando um cabo na placa de um computador aberto">
+          <div class="cartao-corpo">
+            <p class="etiqueta"><svg class="icone" aria-hidden="true"><use href="#i-computador"/></svg>Computador</p>
+            <h3>Fonte, upgrade e sistema</h3>
+            <ul class="lista-trilha">
+              <li>Fonte, cooler e placa de vídeo</li>
+              <li>SSD e memória novos</li>
+              <li>Montagem de computador sob medida</li>
+              <li>Remoção de vírus e formatação</li>
+              <li>Atendimento no local para comércios</li>
+            </ul>
+            <a class="link-seta" href="#diagnostico" data-aparelho="computador">Mostrar o defeito do computador<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="cartao cartao-escuro">
+          <div class="cartao-icones" aria-hidden="true">
+            <svg class="icone"><use href="#i-roteador"/></svg>
+            <svg class="icone"><use href="#i-impressora"/></svg>
+            <svg class="icone"><use href="#i-mouse"/></svg>
+          </div>
+          <div class="cartao-corpo">
+            <p class="etiqueta"><svg class="icone" aria-hidden="true"><use href="#i-roteador"/></svg>Roteador e periféricos</p>
+            <h3>O que fica em volta do computador</h3>
+            <ul class="lista-trilha">
+              <li>Roteador e repetidor</li>
+              <li>Impressora que não imprime</li>
+              <li>Monitor, teclado e mouse</li>
+              <li>Telefone sem fio e rádio comunicador</li>
+            </ul>
+            <a class="link-seta" href="#diagnostico" data-aparelho="roteador">Mostrar o defeito do roteador<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="diagnostico" id="diagnostico" aria-labelledby="titulo-diagnostico">
+      <div class="secao-cabeca secao-cabeca-escura">
+        <p class="sobretitulo">Pré-ordem de serviço</p>
+        <h2 id="titulo-diagnostico">Mostre onde está o defeito</h2>
+        <p>Escolha o aparelho, toque na parte com problema e diga o que está acontecendo. No fim, a pré-ordem vai pronta para o nosso WhatsApp, e você já fica sabendo o que costuma ser e o que levar.</p>
+        <p class="nota-clara">Nada do que você marca aqui fica guardado no site.</p>
+      </div>
+
+      <div class="diag-sem-js">
+        <p>Para montar a pré-ordem, o navegador precisa estar com o JavaScript ligado. Se preferir, mande pelo WhatsApp o aparelho, o modelo e o que está acontecendo.</p>
+        <a class="botao botao-cobre" href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." target="_blank" rel="noopener">
+          <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+          <span>Falar pelo WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="diag">
+        <div class="tapete">
+          <div class="aparelhos" role="group" aria-label="Aparelho">
+            <button type="button" class="aparelho-botao" data-aparelho="celular" aria-pressed="true"><svg class="icone" aria-hidden="true"><use href="#i-celular"/></svg>Celular</button>
+            <button type="button" class="aparelho-botao" data-aparelho="notebook" aria-pressed="false"><svg class="icone" aria-hidden="true"><use href="#i-notebook"/></svg>Notebook</button>
+            <button type="button" class="aparelho-botao" data-aparelho="computador" aria-pressed="false"><svg class="icone" aria-hidden="true"><use href="#i-computador"/></svg>Computador</button>
+            <button type="button" class="aparelho-botao" data-aparelho="roteador" aria-pressed="false"><svg class="icone" aria-hidden="true"><use href="#i-wifi"/></svg>Roteador</button>
+          </div>
+
+          <p class="serigrafia vista-rotulo" aria-hidden="true">VISTA DE BANCADA / <span id="vista-nome">CELULAR</span></p>
+          <div class="vista">
+
+            <svg class="desenho" data-aparelho="celular" viewBox="0 0 400 320" aria-hidden="true" focusable="false">
+              <rect class="corpo" x="150" y="18" width="100" height="264" rx="16"/>
+              <rect class="parte" data-parte="tela" x="157" y="40" width="86" height="210" rx="5"/>
+              <rect class="parte xray" data-parte="bateria" x="170" y="96" width="60" height="122" rx="5"/>
+              <g class="parte" data-parte="som"><rect x="186" y="27" width="26" height="4" rx="2"/><path class="furos" d="M166 266h.1M172 266h.1M178 266h.1M222 266h.1M228 266h.1M234 266h.1"/></g>
+              <circle class="parte" data-parte="camera" cx="225" cy="29" r="3.5"/>
+              <rect class="parte" data-parte="sistema" x="250" y="80" width="5" height="28" rx="2"/>
+              <rect class="corpo" x="250" y="118" width="5" height="40" rx="2"/>
+              <rect class="parte" data-parte="carga" x="188" y="273" width="24" height="6" rx="3"/>
+              <path class="chamada" data-parte="tela" d="M166 62H40"/><circle class="alvo" data-parte="tela" cx="166" cy="62" r="2.6"/><circle class="ancora" data-parte="tela" cx="40" cy="62" r="1"/>
+              <path class="chamada" data-parte="bateria" d="M170 160H40"/><circle class="alvo" data-parte="bateria" cx="170" cy="160" r="2.6"/><circle class="ancora" data-parte="bateria" cx="40" cy="160" r="1"/>
+              <path class="chamada" data-parte="som" d="M166 266H40"/><circle class="alvo" data-parte="som" cx="166" cy="266" r="2.6"/><circle class="ancora" data-parte="som" cx="40" cy="266" r="1"/>
+              <path class="chamada" data-parte="camera" d="M229 29H360"/><circle class="alvo" data-parte="camera" cx="229" cy="29" r="2.6"/><circle class="ancora" data-parte="camera" cx="360" cy="29" r="1"/>
+              <path class="chamada" data-parte="sistema" d="M255 94H360"/><circle class="alvo" data-parte="sistema" cx="255" cy="94" r="2.6"/><circle class="ancora" data-parte="sistema" cx="360" cy="94" r="1"/>
+              <path class="chamada" data-parte="carga" d="M200 279V298H360"/><circle class="alvo" data-parte="carga" cx="200" cy="279" r="2.6"/><circle class="ancora" data-parte="carga" cx="360" cy="298" r="1"/>
+            </svg>
+
+            <svg class="desenho" data-aparelho="notebook" viewBox="0 0 400 320" aria-hidden="true" focusable="false" hidden>
+              <rect class="corpo" x="95" y="20" width="210" height="150" rx="8"/>
+              <rect class="parte" data-parte="tela" x="106" y="31" width="188" height="128" rx="3"/>
+              <circle class="corpo" cx="200" cy="25.5" r="1.8"/>
+              <g class="parte" data-parte="dobradica"><rect x="122" y="166" width="34" height="9" rx="3"/><rect x="244" y="166" width="34" height="9" rx="3"/></g>
+              <path class="corpo" d="M95 175H305L343 250Q345 258 337 258H63Q55 258 57 250Z"/>
+              <g class="parte" data-parte="teclado"><rect x="110" y="183" width="172" height="40" rx="2"/><path class="teclas" d="M110 193H282M110 203H282M110 213H282M124 183V223M138 183V223M152 183V223M166 183V223M180 183V223M194 183V223M208 183V223M222 183V223M236 183V223M250 183V223M264 183V223"/></g>
+              <rect class="corpo" x="172" y="230" width="56" height="18" rx="3"/>
+              <circle class="parte" data-parte="sistema" cx="296" cy="188" r="4.5"/>
+              <g class="parte" data-parte="bateria"><rect class="xray" x="104" y="229" width="58" height="20" rx="3"/><rect x="60" y="236" width="7" height="8" rx="1.5"/></g>
+              <g class="parte" data-parte="aquecimento"><circle class="xray" cx="262" cy="239" r="11"/><path d="M312 232l5 10M318 232l5 10M324 232l5 10"/></g>
+              <path class="chamada" data-parte="tela" d="M120 62H40"/><circle class="alvo" data-parte="tela" cx="120" cy="62" r="2.6"/><circle class="ancora" data-parte="tela" cx="40" cy="62" r="1"/>
+              <path class="chamada" data-parte="teclado" d="M110 203H40"/><circle class="alvo" data-parte="teclado" cx="110" cy="203" r="2.6"/><circle class="ancora" data-parte="teclado" cx="40" cy="203" r="1"/>
+              <path class="chamada" data-parte="bateria" d="M104 239H80V262H40"/><circle class="alvo" data-parte="bateria" cx="104" cy="239" r="2.6"/><circle class="ancora" data-parte="bateria" cx="40" cy="262" r="1"/>
+              <path class="chamada" data-parte="dobradica" d="M278 170H330V146H362"/><circle class="alvo" data-parte="dobradica" cx="278" cy="170" r="2.6"/><circle class="ancora" data-parte="dobradica" cx="362" cy="146" r="1"/>
+              <path class="chamada" data-parte="sistema" d="M300.5 188H340V208H362"/><circle class="alvo" data-parte="sistema" cx="300.5" cy="188" r="2.6"/><circle class="ancora" data-parte="sistema" cx="362" cy="208" r="1"/>
+              <path class="chamada" data-parte="aquecimento" d="M327 239H345V270H362"/><circle class="alvo" data-parte="aquecimento" cx="327" cy="239" r="2.6"/><circle class="ancora" data-parte="aquecimento" cx="362" cy="270" r="1"/>
+            </svg>
+
+            <svg class="desenho" data-aparelho="computador" viewBox="0 0 400 320" aria-hidden="true" focusable="false" hidden>
+              <rect class="corpo" x="120" y="16" width="160" height="288" rx="8"/>
+              <path class="corpo" d="M266 16V304"/>
+              <rect class="corpo xray" x="132" y="86" width="124" height="150" rx="3"/>
+              <g class="parte xray" data-parte="fonte"><rect x="132" y="28" width="92" height="46" rx="3"/><circle cx="178" cy="51" r="15"/></g>
+              <g class="parte xray" data-parte="refrigeracao"><circle cx="182" cy="130" r="22"/><circle cx="182" cy="130" r="6"/><path d="M182 124V110M187.2 133L199.3 140M176.8 133L164.7 140"/></g>
+              <g class="parte xray" data-parte="armazenamento"><rect x="216" y="102" width="7" height="52" rx="1.5"/><rect x="228" y="102" width="7" height="52" rx="1.5"/><rect x="140" y="252" width="62" height="34" rx="3"/></g>
+              <rect class="parte xray" data-parte="video" x="140" y="190" width="108" height="20" rx="2"/>
+              <circle class="parte" data-parte="sistema" cx="273" cy="40" r="4.5"/>
+              <g class="parte" data-parte="entradas"><rect x="270" y="58" width="6" height="11" rx="1"/><rect x="270" y="74" width="6" height="11" rx="1"/><circle cx="273" cy="96" r="2.5"/></g>
+              <path class="chamada" data-parte="fonte" d="M132 51H44"/><circle class="alvo" data-parte="fonte" cx="132" cy="51" r="2.6"/><circle class="ancora" data-parte="fonte" cx="44" cy="51" r="1"/>
+              <path class="chamada" data-parte="refrigeracao" d="M160 130H44"/><circle class="alvo" data-parte="refrigeracao" cx="160" cy="130" r="2.6"/><circle class="ancora" data-parte="refrigeracao" cx="44" cy="130" r="1"/>
+              <path class="chamada" data-parte="armazenamento" d="M140 269H44"/><circle class="alvo" data-parte="armazenamento" cx="140" cy="269" r="2.6"/><circle class="ancora" data-parte="armazenamento" cx="44" cy="269" r="1"/>
+              <path class="chamada" data-parte="sistema" d="M277.5 40H356"/><circle class="alvo" data-parte="sistema" cx="277.5" cy="40" r="2.6"/><circle class="ancora" data-parte="sistema" cx="356" cy="40" r="1"/>
+              <path class="chamada" data-parte="entradas" d="M276 80H330V102H356"/><circle class="alvo" data-parte="entradas" cx="276" cy="80" r="2.6"/><circle class="ancora" data-parte="entradas" cx="356" cy="102" r="1"/>
+              <path class="chamada" data-parte="video" d="M248 200H356"/><circle class="alvo" data-parte="video" cx="248" cy="200" r="2.6"/><circle class="ancora" data-parte="video" cx="356" cy="200" r="1"/>
+            </svg>
+
+            <svg class="desenho" data-aparelho="roteador" viewBox="0 0 400 320" aria-hidden="true" focusable="false" hidden>
+              <g class="parte" data-parte="sinal"><path class="antenas" d="M128 170L108 72M200 170V58M272 170L292 72"/><path d="M182 42Q200 28 218 42M170 30Q200 6 230 30"/></g>
+              <rect class="corpo" x="80" y="170" width="240" height="66" rx="14"/>
+              <g class="parte" data-parte="luzes"><circle cx="112" cy="203" r="3.5"/><circle cx="130" cy="203" r="3.5"/><circle cx="148" cy="203" r="3.5"/><circle cx="166" cy="203" r="3.5"/></g>
+              <g class="parte" data-parte="config"><circle cx="200" cy="203" r="6"/><circle cx="200" cy="203" r="1.5"/></g>
+              <g class="parte" data-parte="cabos"><rect x="232" y="197" width="13" height="11" rx="1.5"/><rect x="252" y="197" width="13" height="11" rx="1.5"/><rect x="272" y="197" width="13" height="11" rx="1.5"/><path d="M278.5 208V258Q278.5 266 286.5 266H318"/><rect x="318" y="260" width="16" height="12" rx="2"/></g>
+              <path class="chamada" data-parte="sinal" d="M108 72H44"/><circle class="alvo" data-parte="sinal" cx="108" cy="72" r="2.6"/><circle class="ancora" data-parte="sinal" cx="44" cy="72" r="1"/>
+              <path class="chamada" data-parte="luzes" d="M108.5 203H44"/><circle class="alvo" data-parte="luzes" cx="108.5" cy="203" r="2.6"/><circle class="ancora" data-parte="luzes" cx="44" cy="203" r="1"/>
+              <path class="chamada" data-parte="config" d="M200 209V290"/><circle class="alvo" data-parte="config" cx="200" cy="209" r="2.6"/><circle class="ancora" data-parte="config" cx="200" cy="290" r="1"/>
+              <path class="chamada" data-parte="cabos" d="M334 266H364"/><circle class="alvo" data-parte="cabos" cx="334" cy="266" r="2.6"/><circle class="ancora" data-parte="cabos" cx="364" cy="266" r="1"/>
+            </svg>
+
+            <div class="pinos" id="pinos"></div>
+          </div>
+
+          <fieldset class="partes">
+            <legend>Onde está o defeito?</legend>
+            <div class="partes-lista" id="partes-lista"></div>
+          </fieldset>
+        </div>
+
+        <article class="ficha" aria-labelledby="ficha-titulo">
+          <header class="ficha-cabeca">
+            <div>
+              <p class="ficha-marca"><svg class="icone" aria-hidden="true"><use href="#logo-marca"/></svg>LC Conecta</p>
+              <h3 class="ficha-titulo" id="ficha-titulo">Pré-ordem de serviço</h3>
+            </div>
+            <p class="ficha-numero"><span>Nº</span> <strong id="ficha-numero">a gerar</strong></p>
+          </header>
+
+          <dl class="ficha-campos">
+            <div><dt>Aparelho</dt><dd id="campo-aparelho">Celular</dd></div>
+            <div><dt>Parte</dt><dd id="campo-parte" class="vazio">a escolher</dd></div>
+            <div><dt>Defeito</dt><dd id="campo-defeito" class="vazio">a escolher</dd></div>
+            <div><dt>Atendimento</dt><dd id="campo-atendimento" class="vazio">a escolher</dd></div>
+          </dl>
+
+          <div class="ficha-passo" id="passo-parte">
+            <h4 class="passo-titulo" tabindex="-1"><span class="passo-num">1</span>Toque na parte com defeito</h4>
+            <p class="passo-ajuda">No desenho ou na lista de partes. Se não souber, escolha <strong>a opção mais próxima</strong>: a bancada confirma.</p>
+          </div>
+
+          <div class="ficha-passo" id="passo-sintoma" hidden>
+            <h4 class="passo-titulo" tabindex="-1"><span class="passo-num">2</span>O que está acontecendo?</h4>
+            <div class="opcoes" id="opcoes-sintoma" role="group" aria-label="O que está acontecendo?"></div>
+          </div>
+
+          <div class="ficha-passo" id="passo-atendimento" hidden>
+            <h4 class="passo-titulo" tabindex="-1"><span class="passo-num">3</span>Como prefere o atendimento?</h4>
+            <label class="campo-modelo" for="modelo">
+              <span>Marca e modelo <em>(opcional)</em></span>
+              <input id="modelo" name="modelo" type="text" maxlength="40" autocomplete="off" placeholder="Ex.: Moto G54, Inspiron 15">
+            </label>
+            <div class="opcoes" id="opcoes-atendimento" role="group" aria-label="Como prefere o atendimento?"></div>
+          </div>
+
+          <div class="ficha-resultado" id="resultado" hidden>
+            <h4 class="resultado-titulo" id="resultado-titulo" tabindex="-1">Pré-ordem pronta</h4>
+            <div class="urgente" id="resultado-urgente" hidden>
+              <svg class="icone" aria-hidden="true"><use href="#i-alerta"/></svg>
+              <p>Esse defeito pede pressa. Leia a orientação abaixo antes de qualquer coisa.</p>
+            </div>
+            <h5>O que costuma ser</h5>
+            <p id="resultado-dica"></p>
+            <h5 id="resultado-antes-titulo">Antes de trazer</h5>
+            <ul class="lista-trilha" id="resultado-antes"></ul>
+            <h5>Prazo</h5>
+            <p id="resultado-prazo"></p>
+            <div class="resultado-acoes">
+              <a class="botao botao-escuro" id="resultado-whats" href="https://wa.me/5527999169771" target="_blank" rel="noopener">
+                <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+                <span>Enviar pelo WhatsApp</span>
+              </a>
+              <button class="botao botao-papel" type="button" id="recomecar">
+                <svg class="icone" aria-hidden="true"><use href="#i-recomecar"/></svg>
+                <span>Começar de novo</span>
+              </button>
+            </div>
+            <p class="ficha-nota">O orçamento final sai depois do diagnóstico na bancada.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao como" id="como-funciona" aria-labelledby="titulo-como">
+      <div class="secao-cabeca">
+        <p class="sobretitulo sobretitulo-cobre">Como funciona</p>
+        <h2 id="titulo-como">Do defeito à retirada</h2>
+      </div>
+      <ol class="trilha">
+        <li>
+          <span class="via" aria-hidden="true">01</span>
+          <h3>Você conta o defeito</h3>
+          <p>Pela pré-ordem do site, pelo WhatsApp ou no balcão, com hora combinada.</p>
+        </li>
+        <li>
+          <span class="via" aria-hidden="true">02</span>
+          <h3>Diagnóstico na bancada</h3>
+          <p>O aparelho é aberto e testado até a causa aparecer, em até 1 dia útil.</p>
+        </li>
+        <li>
+          <span class="via" aria-hidden="true">03</span>
+          <h3>Orçamento pelo WhatsApp</h3>
+          <p>Peça, serviço e prazo por escrito. Se não aprovar, o aparelho volta como chegou.</p>
+        </li>
+        <li>
+          <span class="via" aria-hidden="true">04</span>
+          <h3>Conserto e teste</h3>
+          <p>Depois do serviço, tudo é testado de novo, com você junto na retirada.</p>
+        </li>
+        <li>
+          <span class="via" aria-hidden="true">05</span>
+          <h3>Garantia de 90 dias</h3>
+          <p>Escrita na ordem de serviço, junto com o que foi trocado.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="secao redes" id="redes" aria-labelledby="titulo-redes">
+      <div class="redes-grade">
+        <img class="redes-foto" src="assets/img/rede.webp" width="720" height="540" loading="lazy" alt="Testador de cabo de rede com as luzes dos oito fios acesas">
+        <div class="redes-texto">
+          <p class="sobretitulo sobretitulo-cobre">Wi-Fi e rede</p>
+          <h2 id="titulo-redes">Wi-Fi que chega onde você usa</h2>
+          <p>Para casas e pequenos comércios de Guarapari. A visita começa pela medição do sinal, cômodo por cômodo, e termina com tudo testado na sua frente.</p>
+          <ul class="redes-lista">
+            <li><svg class="icone" aria-hidden="true"><use href="#i-wifi"/></svg>Roteador e repetidor instalados e configurados</li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-cabo"/></svg>Cabo de rede com cada ponto testado</li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-computador"/></svg>Caixa, maquininha e computador do comércio na mesma rede</li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-tomada"/></svg>Tomadas e pontos elétricos para os equipamentos</li>
+          </ul>
+          <a class="botao botao-escuro" href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Quero agendar uma visita técnica para Wi-Fi ou rede." target="_blank" rel="noopener">
+            <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <span>Agendar visita técnica</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao balcao" id="balcao" aria-labelledby="titulo-balcao">
+      <div class="balcao-grade">
+        <div class="balcao-texto">
+          <p class="sobretitulo sobretitulo-cobre">Balcão</p>
+          <h2 id="titulo-balcao">Peças e acessórios</h2>
+          <p>No balcão tem o que mais se pede junto com o conserto. Preço e disponibilidade mudam toda semana, então é só perguntar: toque no que você procura e a mensagem já vai pronta.</p>
+          <img class="balcao-foto" src="assets/img/pecas.webp" width="720" height="540" loading="lazy" alt="Celular desmontado sobre uma manta de silicone, ao lado da bateria, da tela e de uma chave de fenda">
+        </div>
+        <ul class="balcao-lista">
+          <li><a href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Vocês têm carregadores e cabos?" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-raio"/></svg><span>Carregadores e cabos</span><svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Vocês têm fones e caixas de som?" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-fone"/></svg><span>Fones e caixas de som</span><svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Vocês têm películas e capas?" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-pelicula"/></svg><span>Películas e capas</span><svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Vocês têm mouse, teclado ou webcam?" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-mouse"/></svg><span>Mouse, teclado e webcam</span><svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Vocês têm SSD, memória ou pendrive?" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-chip"/></svg><span>SSD, memória e pendrive</span><svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Vocês têm roteador ou repetidor?" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-roteador"/></svg><span>Roteadores e repetidores</span><svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+          <li><a href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Vocês têm extensões, filtros de linha ou pilhas?" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-tomada"/></svg><span>Extensões, filtros de linha e pilhas</span><svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao onde" id="onde-fica" aria-labelledby="titulo-onde">
+      <div class="onde-cartao">
+        <div class="onde-texto">
+          <p class="sobretitulo">Onde fica</p>
+          <h2 id="titulo-onde">Na Praia do Morro, em Guarapari</h2>
+          <address>
+            <svg class="icone" aria-hidden="true"><use href="#i-mapa"/></svg>
+            <span>Av. Augustinho Brambati, 2<br>Praia do Morro, Guarapari - ES<br>CEP 29216-630</span>
+          </address>
+          <p class="onde-nota">O balcão funciona na casa do técnico: combine o horário pelo WhatsApp antes de vir.</p>
+          <div class="acoes">
+            <a class="botao botao-cobre" href="https://www.google.com/maps/search/?api=1&amp;query=Avenida%20Augustinho%20Brambati%2C%202%2C%20Praia%20do%20Morro%2C%20Guarapari%20-%20ES" target="_blank" rel="noopener">
+              <svg class="icone" aria-hidden="true"><use href="#i-mapa"/></svg>
+              <span>Abrir no mapa</span>
+            </a>
+            <a class="botao botao-linha" href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." data-msg="Quero combinar um horário no balcão." target="_blank" rel="noopener">
+              <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              <span>Combinar horário</span>
+            </a>
+          </div>
+        </div>
+        <div class="onde-horario">
+          <h3><svg class="icone" aria-hidden="true"><use href="#i-relogio"/></svg>Horário</h3>
+          <dl>
+            <div><dt>Segunda a sexta</dt><dd>8h às 18h</dd></div>
+            <div><dt>Sábado</dt><dd>8h às 12h</dd></div>
+            <div><dt>Domingo e feriados</dt><dd>Fechado</dd></div>
+          </dl>
+          <p class="status" data-horario>
+            <span class="led" aria-hidden="true"></span>
+            <span class="status-texto">Horário de Brasília</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao duvidas" id="duvidas" aria-labelledby="titulo-duvidas">
+      <div class="secao-cabeca">
+        <p class="sobretitulo sobretitulo-cobre">Dúvidas</p>
+        <h2 id="titulo-duvidas">Antes de trazer o aparelho</h2>
+      </div>
+      <div class="duvidas-lista">
+        <details>
+          <summary>Pago alguma coisa se não aprovar o orçamento?</summary>
+          <p>Não. O conserto só começa depois que você aprova pelo WhatsApp. Se decidir não fazer, o aparelho volta do jeito que chegou.</p>
+        </details>
+        <details>
+          <summary>Preciso deixar a senha do celular?</summary>
+          <p>Ajuda no teste final, para conferir câmera, som e toque. Se preferir não deixar, você desbloqueia na hora da retirada, aqui na bancada.</p>
+        </details>
+        <details>
+          <summary>Vocês recuperam fotos e arquivos?</summary>
+          <p>Quando o armazenamento está bom, sim: a cópia é feita antes de qualquer formatação. Se o defeito estiver no próprio armazenamento, avaliamos na bancada e dizemos com franqueza se dá para recuperar.</p>
+        </details>
+        <details>
+          <summary>Meu celular molhou. O que eu faço?</summary>
+          <p>Desligue, não coloque para carregar e não deixe no arroz. Traga o quanto antes: a oxidação na placa avança com o tempo.</p>
+        </details>
+        <details>
+          <summary>Como funciona a garantia?</summary>
+          <p>São 90 dias sobre o serviço feito, anotados na ordem de serviço junto com a peça trocada. Se o mesmo defeito voltar nesse prazo, o aparelho volta para a bancada.</p>
+        </details>
+        <details>
+          <summary>Vocês atendem em casa?</summary>
+          <p>Wi-Fi, rede e computador de mesa, sim, com visita marcada. Celular e notebook são consertados na bancada, e podemos buscar e entregar na Praia do Morro e nos bairros vizinhos.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <p class="marca marca-rodape">
+          <svg class="marca-simbolo" aria-hidden="true"><use href="#logo-marca"/></svg>
+          <span class="marca-nome"><span class="marca-lc">LC</span> Conecta</span>
+        </p>
+        <p>Assistência técnica em Guarapari - ES.</p>
+        <a class="rodape-whats" href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." target="_blank" rel="noopener">
+          <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp (27) 99916-9771
+        </a>
+      </div>
+      <div class="rodape-dados">
+        <p>LC Conecta é o nome usado nesta página de demonstração. Empresa: 65.745.538 LEONAN LUIZ CAMARGO DA SILVA, CNPJ 65.745.538/0001-70, Av. Augustinho Brambati, 2, Praia do Morro, Guarapari - ES.</p>
+        <p>Horário, serviços, prazos e condições são ilustrativos.</p>
+        <p>Página de demonstração desenvolvida por Leonan Luiz Camargo da Silva no estágio supervisionado de Análise e Desenvolvimento de Sistemas (Multivix).</p>
+      </div>
+      <div class="rodape-creditos">
+        <p>Fotos ilustrativas do Wikimedia Commons, recortadas: <a href="https://commons.wikimedia.org/wiki/File:Jasa_Service_Komputer_-_Bisa_Junisa_Munthe.jpg" target="_blank" rel="noopener">Bisajunisa</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Repair_Lab_(48115787881).jpg" target="_blank" rel="noopener">Redaktion NdW</a> (CC BY 2.0), <a href="https://commons.wikimedia.org/wiki/File:Disassembled_laptop.jpg" target="_blank" rel="noopener">Tulumnes</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Computer_repair_in_progress.jpg" target="_blank" rel="noopener">Vintechcomputerservices</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Assemblaggio_cavo_RJ45_passo_15.jpg" target="_blank" rel="noopener">Giacomo Alessandroni</a> (CC BY-SA 4.0) e <a href="https://commons.wikimedia.org/wiki/File:SHIFT6mq_Repair.jpg" target="_blank" rel="noopener">Triskal</a> (CC BY-SA 4.0).</p>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="barra-celular" aria-label="Atalhos">
+    <a class="botao botao-cobre" href="#diagnostico">Mostrar o defeito</a>
+    <a class="botao botao-linha" href="https://wa.me/5527999169771?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20LC%20Conecta." target="_blank" rel="noopener">
+      <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+</body>
+</html>

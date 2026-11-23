@@ -1,0 +1,11 @@
+.git/
+.vercel/
+dist/
+node_modules/
+review/
+originais/
+qa.mjs
+.env
+.env.*
+*.log
+x/

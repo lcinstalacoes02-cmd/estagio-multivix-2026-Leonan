@@ -1,0 +1,12 @@
+{
+  "name": "lc-conecta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Página de demonstração da LC Conecta, assistência técnica em Guarapari - ES, com pré-ordem de serviço pelo WhatsApp, sem dependências.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test \"testes/*.test.mjs\""
+  }
+}

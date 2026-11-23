@@ -1,0 +1,12 @@
+.vercel/
+dist/
+node_modules/
+.env*
+!.env.example
+qa.mjs
+review/
+originais/
+*.log
+.DS_Store
+Thumbs.db
+x/
