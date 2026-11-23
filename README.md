@@ -1,5 +1,7 @@
 # LC Conecta: assistência técnica em Guarapari
 
+**Site no ar:** https://estagio-multivix-2026-leonan.vercel.app
+
 Página de demonstração desenvolvida por Leonan Luiz Camargo da Silva no estágio supervisionado de Análise e Desenvolvimento de Sistemas (Multivix). Ela apresenta a LC Conecta, uma assistência técnica de celular, notebook e computador na Praia do Morro, em Guarapari - ES, com Wi-Fi, rede e acessórios como serviços de apoio.
 
 O destaque da página é a pré-ordem de serviço: a pessoa escolhe o aparelho, toca no desenho a parte com defeito, diz o que está acontecendo e como prefere o atendimento. A ficha ao lado vai sendo preenchida e, no fim, ganha um número, a explicação do que costuma ser o defeito, o que levar, o prazo e um botão que abre o WhatsApp com tudo escrito. Nada do que é marcado fica guardado.
