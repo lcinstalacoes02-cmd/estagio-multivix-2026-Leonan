@@ -837,9 +837,10 @@ html:not(.js) .diag { display: none; }
   max-width: var(--largura);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
   gap: 32px;
 }
+.rodape-dados { max-width: 62ch; }
 .marca-rodape .marca-simbolo { border-radius: 7px; box-shadow: 0 0 0 1px rgba(232, 239, 234, 0.25); }
 .marca-rodape .marca-nome { color: var(--silk); }
 .marca-rodape .marca-lc { color: var(--cobre); }
